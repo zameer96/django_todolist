@@ -1,0 +1,18 @@
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>{{ todo_item.question_text }}</h1></legend>
+        {% if error_message %}<p style='color: red'><strong>{{ error_message }}</strong></p>{% endif %}
+        {% if success_message %}<p style='color: green'><strong>{{ success_message }}</strong></p>{% endif %}
+        <label for="todo_name">Title:</label><br>
+        <input type="text" id="todo_name" name="todo_name" placeholder="Title of the todo item"><br>
+
+        <label for="todo_description">Details:</label>
+        
+        <br>
+
+        <textarea id="todo_description" name="todo_description" placeholder="Todo item details ..."></textarea>
+    </fieldset>
+    <input type="submit" value="Add item to list">
+    </form>
+

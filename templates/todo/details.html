@@ -1,0 +1,8 @@
+ID # {{ todo_item.id }} <br>
+title: {{ todo_item.name }}<br>
+Description: {{ todo_item.descriptions }}<br>
+Completed: {{ todo_item.is_completed }}<br>
+Username: {{ todo_item.user.username }}<br>
+<br>
+
+<a href={% url 'index' %}> return to listing<a>

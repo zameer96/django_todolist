@@ -32,7 +32,7 @@ class TodoitemUtil:
         return todo_item, None
     
     def list_todo_items(self, user):
-        return TodoItem.objects.filter(user_id=user.id)
+        return TodoItem.objects.filter(user_id=user.id).order_by('-created_at')
 
     def delete_todo_item(self, todo_item_id, user):
         # Todo mark the item inactive rather than deleting it
